@@ -4,9 +4,9 @@ const User = ({ employees, setSector }) => {
   return (
     <Layout>
       <h1>Generation Thailand Home - User Sector</h1>
-      <button onClick={() => setSector("user")}>User Home Sector</button>
-      <button onClick={() => setSector("admin")}>Admin Home Sector</button>
-      <table>
+      <button className="btn btn-outline-light" onClick={() => setSector("user")}>User Home Sector</button>
+      <button className="btn btn-outline-light ms-1" onClick={() => setSector("admin")}>Admin Home Sector</button>
+      <table className="table table-dark table-striped" >
         <thead>
           <tr>
             <th>Name</th>

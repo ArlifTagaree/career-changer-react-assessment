@@ -22,7 +22,12 @@ const Admin = ({ employees, setSector, setEmployees }) => {
   };
 
   const addData = () => {
-    const idNumber = employees[employees.length - 1].id + 1;
+
+    let idNumber = 0;
+    if (employees.length > 0) {
+      idNumber = employees[employees.length - 1].id + 1;
+    }
+
     const newData = {
       id: idNumber,
       name: name,
@@ -39,30 +44,33 @@ const Admin = ({ employees, setSector, setEmployees }) => {
   return (
     <Layout>
       <h1>Generation Thailand Home - Admin Sector</h1>
-      <button onClick={() => setSector("user")}>User Home Sector</button>
-      <button onClick={() => setSector("admin")}>Admin Home Sector</button>
+      <button className="btn btn-outline-light ms-1" onClick={() => setSector("user")}>User Home Sector</button>
+      <button className="btn btn-outline-light ms-1" onClick={() => setSector("admin")}>Admin Home Sector</button>
       <br />
       <h2>Create User Here</h2>
       <input
+        className="form-control mt-2"
         onChange={handleName}
         value={name}
         type="text"
         placeholder="Name"
       />
       <input
+        className="form-control mt-2"
         onChange={handleLastname}
         value={lastname}
         type="text"
         placeholder="Last Name"
       />
       <input
+        className="form-control mt-2 mb-2"
         onChange={handlePosition}
         value={position}
         type="text"
         placeholder="Position"
       />
-      <button onClick={addData}>Save</button>
-      <table>
+      <button className="btn btn-success rounded-pill px-3" onClick={addData}>Save</button>
+      <table className="table table-dark table-striped">
         <thead>
           <tr>
             <th>Name</th>
@@ -79,7 +87,7 @@ const Admin = ({ employees, setSector, setEmployees }) => {
                 <td>{item.lastname}</td>
                 <td>{item.position}</td>
                 <td>
-                  <button onClick={() => handleDelete(item.id)}>DELETE</button>
+                  <button className="btn btn-danger rounded-pill px-3" onClick={() => handleDelete(item.id)}>DELETE</button>
                 </td>
               </tr>
             );

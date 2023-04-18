@@ -46,8 +46,8 @@ const Home = () => {
     return (
       <Layout>
         <h1>Generation Thailand React - Assessment</h1>
-        <button onClick={() => setSector("user")}>User Home Sector</button>
-        <button onClick={() => setSector("admin")}>Admin Home Sector</button>
+        <button className="btn btn-outline-light" onClick={() => setSector("user")}>User Home Sector</button>
+        <button className="btn btn-outline-light ms-1" onClick={() => setSector("admin")}>Admin Home Sector</button>
       </Layout>
     );
   }
